@@ -942,6 +942,10 @@ if (!call_user_func_array('class_exists', $__tmp)) {
         **/
         public function set_field_checkbox($name, $value)
         {
+            /* START HARDCODE THE checkbox_no AND checkbox_yes VALUES  */
+            if (!isset($this->value_entries["$name"]["infos"]["checkbox_no"])) $this->value_entries["$name"]["infos"]["checkbox_no"] = "Off";
+            if (!isset($this->value_entries["$name"]["infos"]["checkbox_yes"])) $this->value_entries["$name"]["infos"]["checkbox_yes"] = "Ja";
+            /* END HARDCODE THE checkbox_no AND checkbox_yes VALUES  */
             //------------------------------------
             $offset_shift=0;
             $verbose_set=($this->verbose&&($this->verbose_level>1));
